@@ -7,10 +7,12 @@ import "./Roles.sol";
 contract ConsumerRole {
 
   // https://docs.soliditylang.org/en/develop/contracts.html#using-for
-  // this means that member functions get the object as first arg
+  // this means that member functions get the object called on as first arg
   using Roles for Roles.Role;
 
   // Define 2 events, one for Adding, and other for Removing
+  event ConsumerAdded(address indexed account);
+  event ConsumerRemoved(address indexed account);
 
   // Define a struct 'consumers' by inheriting from 'Roles' library, struct Role
   Roles.Role private consumers;
