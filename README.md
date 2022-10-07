@@ -13,28 +13,28 @@ The DApp User Interface when running should look like...
 ![truffle test](images/ftc_transaction_history.png)
 
 
-## Getting Started
+## Project Aim
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This project helps farmers, retailers, distributors, and consumers handling the supply chain of coffee. By tracking the origin of the products from the farm to the consumer.
 
-### Prerequisites
+## UML
+
+![Activity Diagram](images/UML/FairTrade_Activity%20-%20Flowchart%20with%20swimlanes.png)
+![Sequence Diagram](images/UML/Fair%20Trade%20Coffee_%20Sequence.png)
+![State Diagram](images/UML/Coffee%20State%20Diagram.png)
+![Class Diagram](images/UML/Fair%20Trade_%20Class%20Diagram.png)
+
+
+### Prerequisites and libraries
 
 Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
 
-```
-Give examples (to be clarified)
-```
-
-### Installing
-
-> The starter code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
-
-A step by step series of examples that tell you have to get a development env running
-
-Clone this repository:
+The project is built using:
 
 ```
-git clone https://github.com/udacity/nd1309/tree/master/course-5/project-6
+nodejs v16.14.2
+Truffle v4.1.14 (core: 4.1.14)
+Solidity v0.4.24 (solc-js)
 ```
 
 Change directory to ```project-6``` folder and install all requisite npm packages (as listed in ```package.json```):
@@ -91,6 +91,20 @@ In a separate terminal window, launch the DApp:
 ```
 npm run dev
 ```
+
+## Metamask setup
+
+Note that the owner address that deploys the contract will have all the various roles
+(Farmer, Distributor etc) owing to the fact that in the role constructors we have
+
+```  
+constructor() public {
+     _addConsumer(msg.sender);
+  }
+```
+
+for this reason it should be the same address you use in Metamask for testing.
+
 
 ## Built With
 
