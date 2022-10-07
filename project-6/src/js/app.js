@@ -74,7 +74,7 @@ App = {
         }
         // If no injected web3 instance is detected, fall back to Ganache
         else {
-            App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+            App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
         }
 
         App.getMetaskAccountID();
@@ -100,6 +100,7 @@ App = {
     initSupplyChain: function () {
         /// Source the truffle compiled smart contracts
         var jsonSupplyChain='../../build/contracts/SupplyChain.json';
+        web3.eth.defaultAccount = web3.eth.accounts[0];
         
         /// JSONfy the smart contracts
         $.getJSON(jsonSupplyChain, function(data) {
@@ -168,6 +169,7 @@ App = {
         var processId = parseInt($(event.target).data('id'));
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
+            console.log(App);
             return instance.harvestItem(
                 App.upc, 
                 App.metamaskAccountID, 
