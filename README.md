@@ -92,6 +92,17 @@ In a separate terminal window, launch the DApp:
 npm run dev
 ```
 
+## Dotenv
+
+To store safely the wallet mnemonic and infura key add a `.env` file to `project-6` dir:
+
+It should look like
+
+```
+INFURA_KEY = '<key from infura>'
+MNEMONIC = '<wallet mneomic from metamask>'
+```
+
 ## Metamask setup
 
 Note that the owner address that deploys the contract will have all the various roles
