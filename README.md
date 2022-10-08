@@ -41,6 +41,7 @@ Change directory to ```project-6``` folder and install all requisite npm package
 
 ```
 cd project-6
+nvm use 16.14.2
 npm install
 ```
 
@@ -114,7 +115,8 @@ constructor() public {
   }
 ```
 
-for this reason it should be the same address you use in Metamask for testing.
+for this reason it should be the same address you use in Metamask for testing 
+(the first in the ganache-cli output...import the private key to metamask)
 
 
 ## Built With
