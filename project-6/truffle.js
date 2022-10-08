@@ -14,8 +14,16 @@ module.exports = {
     },
     goerli: {
       provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
-      network_id: 4
-    }
+      network_id: 5,
+      gas: 4500000,
+      gasPrice: 10000000000,
+    },
+    rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
+        network_id: 4,       // rinkeby's id
+        gas: 4500000,        // rinkeby has a lower block limit than mainnet
+        gasPrice: 10000000000
+    },
   },
   compilers: {
     solc: {
